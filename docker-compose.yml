@@ -1,0 +1,13 @@
+version: "3"
+services:
+  python:
+    build: ./src
+    platform: linux/amd64
+    tty: true
+    volumes:
+      - ./src:/usr/src
+    networks:
+      - scraping
+networks:
+  scraping:
+    driver: bridge
